@@ -18,6 +18,7 @@ public class SelectionManager : MonoBehaviour
     public SelectionMode CurrentSelectionMode;
     public List<SelectionInstructions> SelectionInstructionsTexts;
 
+
     public void Update()
     {
         if (_selectedCharacter == null && !UI.InstructionText.gameObject.activeSelf)
@@ -30,10 +31,10 @@ public class SelectionManager : MonoBehaviour
             RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
             if (hit.collider != null)
             {
-                if (!hit.collider.TryGetComponent<Character>(out var character)) return;
+                if (!hit.collider.TryGetComponent<Character>(out var character)) return;                    
                 if (CurrentSelectionMode == SelectionMode.EnemyToAttack)
-                {
-                    if (_selectedCharacter.GetType() == typeof(Ally)) ((Ally)_selectedCharacter).Attack(character);
+                {                                                                                                                                        
+                    if (_selectedCharacter.GetType() == typeof(Ally)) ((Ally)_selectedCharacter).Attack(character);                            
                 }
                 SelectCharacter(character);
             }

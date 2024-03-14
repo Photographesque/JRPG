@@ -1,12 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 public class Enemy : Character
 {
 
     public GameObject FXDeath;
+    public GameObject[] NextEnemy;
+    private int Number;
+    public GameObject FinalDialogueBox;
+    public GameObject BlackBorder;
+    public FinalDialogue FINALDIALOGUE;
 
+    private void Start()
+    {
+        Number = 0;
+    } 
 
     internal override void Attack(Character defender)
     {
@@ -29,8 +39,23 @@ public class Enemy : Character
         {
 
             Instantiate(FXDeath, gameObject.transform.position, Quaternion.identity);
+
+            //Instantiate(NextEnemy, gameObject.transform.position, Quaternion.identity);
+
+            if (NextEnemy.Length > 0)
+            { NextEnemy[0].SetActive(true); }
+            if (NextEnemy.Length > 1)
+            { NextEnemy[1].SetActive(true); }
+
+            //gameObject.SetActive(false);
+
             Destroy(gameObject);
+
+            FINALDIALOGUE.NumberofEnemy += 1;
+
         }
+
+       
     }
 
 }

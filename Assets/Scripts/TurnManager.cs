@@ -8,6 +8,9 @@ public class TurnManager : MonoBehaviour
 {
     private static TurnManager _instance;
     public static TurnManager Instance { get { return _instance; } }
+    public float WaitingTime;
+
+    private bool isWait = false;
     private void Awake()
     {
         if (_instance == null) _instance = this;
@@ -30,6 +33,7 @@ public class TurnManager : MonoBehaviour
         {
             foreach (Enemy enemy in _enemies)
             {
+                StartCoroutine(Time());
                 AttackRandomAlly(enemy);
             }
         }
@@ -37,10 +41,17 @@ public class TurnManager : MonoBehaviour
 
     private void AttackRandomAlly(Enemy enemy)
     {
+
         if (enemy.HasAttackedThisTurnOrIsStuned) return;
         int index = UnityEngine.Random.Range(0, _allies.Count);
-        enemy.Attack(_allies[index]);
+        if (isWait == true)
+        {
+            StopAllCoroutines();
+            isWait = false;
+            enemy.Attack(_allies[index]);
+        }
     }
+
 
     public bool HasAttacked<T>(T character) where T : Character
     {
@@ -82,5 +93,11 @@ public class TurnManager : MonoBehaviour
             foreach (Enemy enemy in _enemies) { enemy.HasAttackedThisTurnOrIsStuned = false; }
         }
         return res;
+    }
+
+    IEnumerator Time()
+    {
+        yield return new WaitForSeconds(WaitingTime);
+        isWait = true;
     }
 }

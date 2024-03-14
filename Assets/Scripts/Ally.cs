@@ -7,6 +7,7 @@ public class Ally : Character
 {
     public SpriteRenderer sprite;
     public float TimeRedFlash;
+    public GameObject FXDeath;
 
     internal override void Attack(Character defender)
     {
@@ -48,5 +49,17 @@ public class Ally : Character
         }
         // // Une fois l'animation terminée, assurez-vous que la couleur est réinitialisée à la couleur d'origine
         sprite.color = startColor;
+
+        if (Life == 0)
+        {
+
+            Instantiate(FXDeath, gameObject.transform.position, Quaternion.identity);
+
+            //Instantiate(NextEnemy, gameObject.transform.position, Quaternion.identity);
+          
+
+            gameObject.SetActive(false);
+
+        }
     }
 }

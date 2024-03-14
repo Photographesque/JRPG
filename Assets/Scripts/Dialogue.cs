@@ -9,11 +9,14 @@ public class Dialogue : MonoBehaviour
     public string[] lines;
     public float textSpeed;
     private int index;
+    public GameObject BlackBorder;
+
 
     void Start()
     {
         textComponent.text = string.Empty;
         StartDialogue();
+       
     }
 
     // Update is called once per frame
@@ -29,6 +32,7 @@ public class Dialogue : MonoBehaviour
             {
                 StopAllCoroutines();
                 textComponent.text = lines[index];
+                
 
             }
         }
@@ -60,6 +64,8 @@ public class Dialogue : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
+            BlackBorder.SetActive(false);
+
         }
     }
 }
