@@ -9,6 +9,7 @@ public class FinalDialogue : MonoBehaviour
     public GameObject FinalDialogueBox;
     public GameObject BlackBorder;
     public GameObject[] NextEnemy;
+
     // Start is called before the first frame update
     void Start()
     {

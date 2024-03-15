@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class Dialogue : MonoBehaviour
 {
@@ -10,19 +12,22 @@ public class Dialogue : MonoBehaviour
     public float textSpeed;
     private int index;
     public GameObject BlackBorder;
+    public GameObject FinalDialogueBox;
+    public FinalDialogue FINALDIALOGUE;
+
 
 
     void Start()
     {
         textComponent.text = string.Empty;
         StartDialogue();
-       
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             if (textComponent.text == lines[index])
             {
@@ -32,7 +37,8 @@ public class Dialogue : MonoBehaviour
             {
                 StopAllCoroutines();
                 textComponent.text = lines[index];
-                
+               
+              
 
             }
         }
@@ -65,7 +71,22 @@ public class Dialogue : MonoBehaviour
         {
             gameObject.SetActive(false);
             BlackBorder.SetActive(false);
+            if (FINALDIALOGUE.NumberofEnemy == 5)
+            {
+
+                SceneManager.LoadScene("Menu");
+
+
+            }
+
 
         }
+    }
+
+    public void LoadNextScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = (currentSceneIndex + 1) % SceneManager.sceneCountInBuildSettings;
+        SceneManager.LoadScene(nextSceneIndex);
     }
 }
