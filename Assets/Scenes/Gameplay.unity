@@ -3655,7 +3655,7 @@ PrefabInstance:
       objectReference: {fileID: 3459898745795027089, guid: ac5ce7805d6cb7a448fa004e17fafc2d, type: 3}
     - target: {fileID: 4085489667597305622, guid: 849bad00bbcd1f2458154a441e302bd2, type: 3}
       propertyPath: NormalAttackDamage
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8841873232076443971, guid: 849bad00bbcd1f2458154a441e302bd2, type: 3}
       propertyPath: m_Name
@@ -3716,7 +3716,7 @@ PrefabInstance:
       objectReference: {fileID: 3459898745795027089, guid: ac5ce7805d6cb7a448fa004e17fafc2d, type: 3}
     - target: {fileID: 1544705698832010631, guid: 7618a40834e9b0a46b2c9afb01a8aba8, type: 3}
       propertyPath: NormalAttackDamage
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2544784226389741928, guid: 7618a40834e9b0a46b2c9afb01a8aba8, type: 3}
       propertyPath: m_RootOrder

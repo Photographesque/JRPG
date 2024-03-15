@@ -17,6 +17,7 @@ public class SelectionManager : MonoBehaviour
     public GameUI UI;
     public SelectionMode CurrentSelectionMode;
     public List<SelectionInstructions> SelectionInstructionsTexts;
+    
 
 
     public void Update()
@@ -56,7 +57,10 @@ public class SelectionManager : MonoBehaviour
         CurrentSelectionMode = SelectionMode.Default;
         if (_selectedCharacter != null) _selectedCharacter.Visual.material = DefaultMaterial;
         _selectedCharacter = character;
+
+
         _selectedCharacter.Visual.material = OutlineMaterial;
+
         UI.UpdateUI(_selectedCharacter);
     }
 

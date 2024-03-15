@@ -12,7 +12,7 @@ public class Character : MonoBehaviour
     public int NormalAttackDamage = 10;
     public Color CanAttackColor = Color.white;
     public Color StandByColor = Color.grey;
-    private bool _hasAttackedThisTurnOrIsStuned = false;
+    public bool _hasAttackedThisTurnOrIsStuned = false;
     public float TimeShake;
     public float PowerShake;
     public Shake ShakeScript;
@@ -22,6 +22,7 @@ public class Character : MonoBehaviour
         get { return _hasAttackedThisTurnOrIsStuned; }
         set
         {
+            
             _hasAttackedThisTurnOrIsStuned = value;
             Visual.color = _hasAttackedThisTurnOrIsStuned ? StandByColor : CanAttackColor;
         }
@@ -31,6 +32,7 @@ public class Character : MonoBehaviour
     {
         Life = LifeMax;
     }
+  
     public bool isAlive()
     {
         return Life > 0;
