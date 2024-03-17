@@ -17,18 +17,21 @@ public class TurnManager : MonoBehaviour
     }
     [SerializeField] private List<Ally> _allies;
     [SerializeField] private List<Enemy> _enemies;
-    private int _turnCount = 0;
+    //private int _turnCount = 0;
     private bool _isEnemiesTurn = false;
     // Start is called before the first frame update
-    void Start()
+    //void Start()
+    //{
+    //}
+    private void Update()
     {
+
+
         _allies = new List<Ally>(FindObjectsByType<Ally>(FindObjectsSortMode.InstanceID));
         _enemies = new List<Enemy>(FindObjectsByType<Enemy>(FindObjectsSortMode.InstanceID));
         foreach (Ally ally in _allies) { ally.HasAttackedThisTurnOrIsStuned = false; }
         foreach (Enemy enemy in _enemies) { enemy.HasAttackedThisTurnOrIsStuned = false; }
-    }
-    private void Update()
-    {
+
         if (_isEnemiesTurn)
         {
             foreach (Enemy enemy in _enemies)

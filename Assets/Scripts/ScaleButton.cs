@@ -35,30 +35,30 @@ public class Scale_Button : MonoBehaviour
         // Assurer que l'�chelle atteint exactement la cible � la fin
     }
 
-    private IEnumerator Reverse()
-    {
+//    private IEnumerator Reverse()
+//    {
 
-        float duration = 1.0f; // Dur�e de l'animation en secondes
-        float targetScale = 1.0f; // �chelle d'origine
+//        float duration = 1.0f; // Dur�e de l'animation en secondes
+//        float targetScale = 1.0f; // �chelle d'origine
 
-        Vector3 startScale = myRectTransform.localScale;
-        float elapsedTime = 0f;
+//        Vector3 startScale = myRectTransform.localScale;
+//        float elapsedTime = 0f;
 
-        while (elapsedTime < TimeAnimation)
-        {
-            myRectTransform.localScale = Vector3.Lerp(startScale, new Vector3(originalScale.x, originalScale.y, originalScale.z), elapsedTime / TimeAnimation);
-            elapsedTime += Time.deltaTime;
-            yield return null; // Attendre la prochaine trame
-        }
+//        while (elapsedTime < TimeAnimation)
+//        {
+//            myRectTransform.localScale = Vector3.Lerp(startScale, new Vector3(originalScale.x, originalScale.y, originalScale.z), elapsedTime / TimeAnimation);
+//            elapsedTime += Time.deltaTime;
+//            yield return null; // Attendre la prochaine trame
+//        }
 
-        // Assurer que l'�chelle atteint exactement la cible � la fin
-        myRectTransform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
-    }
+//        // Assurer que l'�chelle atteint exactement la cible � la fin
+//        myRectTransform.localScale = new Vector3(originalScale.x, originalScale.y, originalScale.z);
+//    }
 
-    public void Default()
-    {
-        StopAllCoroutines(); //Ca arrete la courotines en haut sinon elle fonctionnera jamais
-        StartCoroutine(Reverse());
-        //myRectTransform.localScale = Vector3.one;
-    }
+//    public void Default()
+//    {
+//        StopAllCoroutines(); //Ca arrete la courotines en haut sinon elle fonctionnera jamais
+//        StartCoroutine(Reverse());
+//        //myRectTransform.localScale = Vector3.one;
+//    }
 }

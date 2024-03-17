@@ -8,19 +8,16 @@ public class Enemy : Character
 
     public GameObject FXDeath;
     public GameObject[] NextEnemy;
-    private int Number;
+    //private int Number;
     public GameObject FinalDialogueBox;
     public GameObject BlackBorder;
     public FinalDialogue FINALDIALOGUE;
 
-    private void Start()
-    {
-        Number = 0;
-    } 
+  
 
     internal override void Attack(Character defender)
     {
-        print($"{name} attack {defender.name}");
+        
         if (HasAttackedThisTurnOrIsStuned) return;
         base.Attack(defender);
     }

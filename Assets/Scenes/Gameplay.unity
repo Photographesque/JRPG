@@ -428,8 +428,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1660138700}
   lines:
-  - 'You won ! '
-  - gg !
+  - It wasn't so hard after all ! Your story may have been short, but it will stay
+    with you forever.
+  - Oh yes, you will tell the great story of your first encounter with a slime, late
+    in the night, when you passion was so high !
+  - How could your forget that slimes exist ? Of course you couldn't.
+  - 'Well, it''s time to say goodbye adventurer. Until your next journey ! '
   textSpeed: 0.05
   BlackBorder: {fileID: 477552890}
   FinalDialogueBox: {fileID: 300212748}
@@ -1078,8 +1082,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1772754866}
   lines:
-  - Hello there
-  - How are you ?
+  - Once in a blue moon, were two determined warriors, ready to fight !
+  - Not that is it rare to find warriors on the beach, but that is rare to find a
+    slime on it !
+  - Could you even think slimes existed before? No, you couldn't believe it.
+  - But now our story makes you face with reality. All your existence was a lie !
+    They exist.
+  - And what was a slime doing such late in the night ? Who knows, nobody knows slimes.
+  - And I don't know much more than you adventurer.
+  - 'That is why you should embody thoses two warriors and collect infos about it
+    ! Sounds crazy isn''t it ? '
   textSpeed: 0.05
   BlackBorder: {fileID: 477552890}
   FinalDialogueBox: {fileID: 300212748}
